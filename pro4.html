@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animal Shelter Outcome Predictor | Trinaini Koppoju</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #d9d9db; /* Background */
+      color: #c99365;      /* Warm beige text */
+      margin: 0;
+      min-height: 100vh;
+      box-shadow: 0 0 60px 20px #868e94 inset; /* Glow border */
+    }
+    .section {
+      padding: 3rem 1rem;
+    }
+    .card {
+      background: #2d536f; /* Deep Blue */
+      border-radius: 1rem;
+      padding: 1.5rem;
+      color: #fff;
+      box-shadow: 0 0 30px rgba(134, 142, 148, 0.6);
+    }
+    .btn-primary {
+      background: #9a5854; /* Rust Red */
+      color: #fff;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #6e8d5e; /* Green */
+    }
+    .btn-outline {
+      border: 2px solid #c99365;
+      color: #c99365;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover {
+      background: #c99365;
+      color: #000;
+    }
+    .highlight {
+      color: #9a5854; /* Rust Red */
+      font-weight: 600;
+    }
+    footer {
+      background: #6e8d5e;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 20px #868e94 inset;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="section text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4">
+      Animal Shelter <span class="highlight">Outcome Predictor</span>
+    </h1>
+    <p class="text-base md:text-lg max-w-2xl mx-auto">
+      Predicting outcomes like <em>Adoption</em>, <em>Transfer</em>, and <em>Return to Owner</em> 
+      using 29k+ real records and machine learning.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="https://colab.research.google.com/drive/1au92rcpOaUahTh7YPrBcpH4xvYVnFTa9?usp=sharing" target="_blank" class="btn-primary w-full sm:w-auto text-center">🚀 Open in Colab</a>
+      <a href="#results" class="btn-outline w-full sm:w-auto text-center">See Results</a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section id="overview" class="section max-w-6xl mx-auto grid gap-6 md:grid-cols-3">
+    <div class="md:col-span-2 card">
+      <h2 class="text-2xl font-bold mb-3">📌 Project Overview</h2>
+      <p>
+  This project applies <span class="highlight">machine learning</span> to predict 
+  <b>animal outcomes</b> in shelters. By analyzing details such as 
+  <b>species</b>, <b>breed</b>, <b>age</b>, <b>color</b>, and 
+  <b>intake type</b>, the model predicts whether an animal will be 
+  <em>Adopted</em>, <em>Transferred</em>, or <em>Returned to Owner</em>. 
+  The dataset includes <b>29k+ real records</b>, making it highly 
+  realistic. This helps shelters improve <span class="highlight">adoption 
+  strategies</span>, allocate resources better, and support overall 
+  <em>animal welfare</em>.
+</p>
+
+    </div>
+    <aside class="card">
+      <h3 class="font-semibold mb-2">⚙️ Tech Stack</h3>
+      <ul class="list-disc ml-5 text-sm space-y-1">
+        <li>Python, Pandas, NumPy</li>
+        <li>scikit-learn (RandomForest)</li>
+        <li>Matplotlib</li>
+        <li>Google Colab</li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- Dataset -->
+  <section id="dataset" class="section max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
+    <div class="card bg-[#9a5854] text-white">
+      <h2 class="text-2xl font-bold mb-3">📊 Dataset</h2>
+      <ul class="list-disc ml-5 space-y-2 text-sm">
+        <li><b>Size:</b> 29,421 rows × 37 columns</li>
+        <li><b>Target:</b> outcome_type (9 classes)</li>
+        <li>Includes: Adoption, Transfer, Euthanasia, etc.</li>
+      </ul>
+    </div>
+    <div class="card bg-[#9a5854] text-white">
+      <h3 class="text-xl font-semibold mb-3">🧹 Preprocessing</h3>
+      <ul class="list-disc ml-5 space-y-2 text-sm">
+        <li>Dropped IDs and redundant columns</li>
+        <li>Imputed missing values</li>
+        <li>Label encoding categorical features</li>
+        <li>Scaling numeric values</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="section max-w-6xl mx-auto">
+    <div class="card">
+      <h2 class="text-2xl font-bold mb-3">📈 Results</h2>
+      <p>
+        The model achieved <span class="font-bold">94% accuracy</span>. 
+        High accuracy for common classes such as <b>Adoption</b> and <b>Transfer</b>, 
+        while rare classes remain challenging.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        <div class="p-4 rounded-lg bg-[#6e8d5e] text-white text-center">
+          <div class="text-sm">Accuracy</div>
+          <div class="text-2xl font-bold">94%</div>
+        </div>
+        <div class="p-4 rounded-lg bg-[#9a5854] text-white text-center">
+          <div class="text-sm">Strong</div>
+          <div class="font-semibold">Adoption, Transfer</div>
+        </div>
+        <div class="p-4 rounded-lg bg-[#6e8d5e] text-white text-center">
+          <div class="text-sm">Challenging</div>
+          <div class="font-semibold">Rare Classes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> Trinaini Koppoju • Animal Shelter Outcome Predictor
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
