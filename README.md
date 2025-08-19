@@ -27,11 +27,6 @@ The model analyzes features like **species, breed, age, color, health, and intak
 
 ---
 
-## 🚀 Run on Colab
-[Open in Google Colab](https://colab.research.google.com/drive/1au92rcpOaUahTh7YPrBcpH4xvYVnFTa9?usp=sharing)
-
----
-
 ## 👩‍💻 Author
 **Trinaini Koppoju**  
-📊 Data Science | 🤖 ML | 📱 Android Development  
+📊 Data Science | 🤖 ML | Front-end developer
